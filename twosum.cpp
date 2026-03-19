@@ -1,3 +1,16 @@
+#include <iostream>
+using namespace std;
+
+struct ListNode {
+    int val;
+    ListNode* next;
+
+    ListNode(int x) {
+        val = x;
+        next = nullptr;
+    }
+};
+
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
@@ -22,3 +35,24 @@ public:
         return dummy->next;
     }
 };
+
+int main() {
+    ListNode* a = new ListNode(2);
+    a->next = new ListNode(4);
+    a->next->next = new ListNode(3);
+
+    ListNode* b = new ListNode(5);
+    b->next = new ListNode(6);
+    b->next->next = new ListNode(4);
+
+    Solution sol;
+    ListNode* res = sol.addTwoNumbers(a, b);
+
+    while (res) {
+        cout << res->val << " ";
+        res = res->next;
+    }
+
+    cout << endl;
+    return 0;
+}
