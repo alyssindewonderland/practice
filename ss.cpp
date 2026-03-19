@@ -2,6 +2,6 @@
 using namespace std;
 
 int main () {
-    cout << 12 << endl;
+    cout << "pebble" << endl;
     return 0;
 }
